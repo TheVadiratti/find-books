@@ -1,0 +1,25 @@
+.card {
+  list-style-type: none;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: var(--s-font-size);
+}
+
+.imageCnt {
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+
+.category {
+  text-decoration: underline;
+  opacity: .8;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.author {
+  opacity: .8;
+}
