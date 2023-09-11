@@ -1,0 +1,6 @@
+.cnt {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  grid-template-rows: 450px;
+  gap: 20px;
+}
