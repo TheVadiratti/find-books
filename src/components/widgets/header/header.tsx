@@ -1,5 +1,5 @@
 import { memo } from "react";
-import SearchBooks from "@/components/features/search-books/search-books";
+import { SearchBooks } from "@/components/features/search-books";
 import Styles from "./header.module.css";
 
 const Header = memo(() => (

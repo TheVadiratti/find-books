@@ -37,7 +37,7 @@ const SearchBooks = memo(() => {
   return (
     <form className={Styles.form} onSubmit={submitForm}>
       <SearchInput
-        placeholder="Введите название"
+        placeholder="Enter query..."
         onChange={searchInputHandler}
         value={search}
         extraClass={Styles.searchInput}
