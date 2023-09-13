@@ -4,7 +4,7 @@ import Styles from "./simple-button.module.css";
 interface Props {
   children: string;
   type: ButtonHTMLAttributes<HTMLButtonElement>["type"];
-  onClick: VoidFunction;
+  onClick?: VoidFunction;
   extraClass?: string;
 }
 
