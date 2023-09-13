@@ -8,11 +8,11 @@ import {
   enterSearchInput,
   changeCategoryFilter,
   changeSortingByFilter,
-} from "./store/searchSlice";
-import { CATEGORIES, SORTING_BY } from "./constants/select";
+} from "./model/store/searchSlice";
+import { CATEGORIES, SORTING_BY } from "./lib/constants/select";
 import Styles from "./search-books.module.css";
-import { composeUrl } from "./helpers/url";
-import { BASE_URL } from "./constants/url";
+import { composeUrl } from "./lib/helpers/url";
+import { BASE_URL } from "./lib/constants/url";
 import useInputControl from "../../shared/hooks/store";
 
 const SearchBooks = memo(() => {

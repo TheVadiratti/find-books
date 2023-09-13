@@ -4,7 +4,7 @@ import {
   getBooksRequest,
   getBooksError,
   getBooksSuccess,
-} from "../store/searchSlice";
+} from "../model/store/searchSlice";
 
 const getBooks = (url: string) => async (dispatch: AppDispatch) => {
   dispatch(getBooksRequest());

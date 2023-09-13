@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import searchSlice from "@/components/features/search-books/store/searchSlice";
+import searchSlice from "@/components/features/search-books/model/store/searchSlice";
 
 const rootReducer = combineReducers({ searchSlice });
 
