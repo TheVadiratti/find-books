@@ -17,14 +17,18 @@ import useInputControl from "../../../shared/hooks/store";
 
 const SearchBooks = memo(() => {
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(changeCategoryFilter(CATEGORIES[0]));
-    dispatch(changeSortingByFilter(SORTING_BY[0]));
-  }, []);
   const inputs = useAppSelector((state) => state.searchSlice.inputs);
   const searchInputHandler = useInputControl(enterSearchInput);
   const categorySelectHandler = useInputControl(changeCategoryFilter);
   const sortingSelectHandler = useInputControl(changeSortingByFilter);
+  useEffect(() => {
+    if (!inputs.category) {
+      dispatch(changeCategoryFilter(CATEGORIES[0]));
+    }
+    if (!inputs.sortingBy) {
+      dispatch(changeSortingByFilter(SORTING_BY[0]));
+    }
+  }, []);
 
   const { search, category, sortingBy } = inputs;
   const submitForm: FormEventHandler<HTMLFormElement> = (e) => {
