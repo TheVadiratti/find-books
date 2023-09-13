@@ -13,7 +13,7 @@ import { CATEGORIES, SORTING_BY } from "./constants/select";
 import Styles from "./search-books.module.css";
 import { composeUrl } from "./helpers/url";
 import { BASE_URL } from "./constants/url";
-import useInputControl from "./hooks/store";
+import useInputControl from "../../shared/hooks/store";
 
 const SearchBooks = memo(() => {
   const dispatch = useAppDispatch();
