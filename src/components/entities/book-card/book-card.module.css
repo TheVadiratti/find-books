@@ -1,4 +1,6 @@
 .card {
+  width: 280px;
+  height: 450px;
   list-style-type: none;
   box-sizing: border-box;
   padding: 20px;
@@ -12,14 +14,17 @@
 }
 
 .category {
+  height: 5%;
   text-decoration: underline;
   opacity: .8;
 }
 
 .name {
+  flex-grow: 1;
   font-weight: bold;
 }
 
 .author {
+  height: 5%;
   opacity: .8;
 }
