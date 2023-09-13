@@ -1,6 +1,7 @@
 import { AppDispatch } from "@/store/store";
 import {
   setFoundBooks,
+  addMoreBooks,
   getBooksRequest,
   getBooksError,
   getBooksSuccess,
@@ -20,4 +21,17 @@ const getBooks = (url: string) => async (dispatch: AppDispatch) => {
     });
 };
 
-export default getBooks;
+const getMoreBooks = (url: string) => async (dispatch: AppDispatch) => {
+  dispatch(getBooksRequest());
+  await fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      dispatch(addMoreBooks(res.items));
+      dispatch(getBooksSuccess());
+    })
+    .catch((err) => {
+      dispatch(getBooksError(err));
+    });
+};
+
+export { getBooks, getMoreBooks };

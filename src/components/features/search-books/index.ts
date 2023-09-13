@@ -1,4 +1,4 @@
 import SearchBooks from "./ui/search-books";
-import { addMoreBooks } from "./model/store/searchSlice";
+import { getMoreBooks } from "./api/get-books";
 
-export { SearchBooks, addMoreBooks };
+export { SearchBooks, getMoreBooks };
