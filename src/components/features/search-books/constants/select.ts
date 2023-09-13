@@ -1,4 +1,4 @@
-const categories = [
+const CATEGORIES = [
   "all",
   "art",
   "biography",
@@ -7,6 +7,6 @@ const categories = [
   "medical",
   "poetry",
 ];
-const sortingBy = ["relevance", "newest"];
+const SORTING_BY = ["relevance", "newest"];
 
-export { categories, sortingBy };
+export { CATEGORIES, SORTING_BY };
