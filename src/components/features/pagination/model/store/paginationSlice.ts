@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
+import { paginationStep } from "../../lib/config";
 
 interface InitialState {
   startIndex: number;
@@ -14,7 +15,7 @@ const paginationSlice = createSlice({
   initialState,
   reducers: {
     increment(state) {
-      state.startIndex += 30;
+      state.startIndex += paginationStep;
     },
     reset(state) {
       state.startIndex = 0;

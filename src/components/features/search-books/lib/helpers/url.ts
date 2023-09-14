@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
+// eslint-disable-next-line import/no-cycle
+import { paginationStep } from "@/components/features/pagination";
 import { API_KEY } from "../constants/config";
 
 export const composeUrl = (
@@ -27,7 +29,7 @@ export const composeUrl = (
   }
 
   if (startIndex) {
-    url += `&startIndex=${String(startIndex)}&maxResults=30`;
+    url += `&startIndex=${String(startIndex)}&maxResults=${paginationStep}`;
   }
 
   url += `&key=${API_KEY}`;
