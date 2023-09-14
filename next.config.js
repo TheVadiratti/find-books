@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: ['books.google.com'],
+    output: 'standalone',
   },
 }
 
