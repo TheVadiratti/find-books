@@ -2,6 +2,7 @@
 
 import BooksGrid from "@/components/widgets/books-grid/books-grid";
 import { useAppSelector } from "@/store/types/hooks";
+import { PaginationButton } from "@/components/features/pagination";
 import Styles from "./page.module.css";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <main className={Styles.main}>
       {(total || isSearchSuccess) && <p>{`Found ${total} results`}</p>}
       <BooksGrid />
+      {isSearchSuccess && <PaginationButton />}
     </main>
   );
 }
