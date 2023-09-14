@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
 import { Book } from "@/store/types/types";
+import { CATEGORIES, SORTING_BY } from "../../lib/constants/select";
 
 interface InitialState {
   foundTotal: string | null;
@@ -23,8 +24,8 @@ const initialState: InitialState = {
   foundBooks: [],
   inputs: {
     search: "",
-    category: "",
-    sortingBy: "",
+    category: CATEGORIES[0],
+    sortingBy: SORTING_BY[0],
   },
   status: {
     isFetching: false,
@@ -44,7 +45,7 @@ const searchSlice = createSlice({
     },
 
     addMoreBooks(state, action) {
-      state.foundBooks.push(action.payload);
+      state.foundBooks.push(...action.payload);
     },
 
     enterSearchInput(state, action) {

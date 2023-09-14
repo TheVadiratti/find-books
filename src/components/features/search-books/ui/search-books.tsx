@@ -1,9 +1,9 @@
-import { memo, FormEventHandler, useEffect } from "react";
+import { memo, FormEventHandler } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/types/hooks";
 import SearchInput from "@/components/shared/ui/search-input/search-input";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import SimpleSelect from "@/components/shared/ui/simple-select/simple-select";
-import getBooks from "../api/get-books";
+import { getBooks } from "../api/get-books";
 import {
   enterSearchInput,
   changeCategoryFilter,
@@ -21,14 +21,6 @@ const SearchBooks = memo(() => {
   const searchInputHandler = useInputControl(enterSearchInput);
   const categorySelectHandler = useInputControl(changeCategoryFilter);
   const sortingSelectHandler = useInputControl(changeSortingByFilter);
-  useEffect(() => {
-    if (!inputs.category) {
-      dispatch(changeCategoryFilter(CATEGORIES[0]));
-    }
-    if (!inputs.sortingBy) {
-      dispatch(changeSortingByFilter(SORTING_BY[0]));
-    }
-  }, []);
 
   const { search, category, sortingBy } = inputs;
   const submitForm: FormEventHandler<HTMLFormElement> = (e) => {
