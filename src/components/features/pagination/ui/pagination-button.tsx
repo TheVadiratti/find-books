@@ -3,7 +3,7 @@ import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import { useAppDispatch, useAppSelector } from "@/store/types/hooks";
 import { increment } from "../model/store/paginationSlice";
 import { composeUrl } from "../../search-books/lib/helpers/url";
-import { BASE_URL } from "../../search-books/lib/constants/url";
+import { BASE_URL } from "../../search-books/lib/constants/config";
 import { getMoreBooks } from "../../search-books";
 
 const PaginationButton = memo(() => {
