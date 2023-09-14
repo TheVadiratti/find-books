@@ -9,10 +9,11 @@ import Styles from "./page.module.css";
 export default function Home() {
   const total = useAppSelector((state) => state.searchSlice.foundTotal);
   const status = useAppSelector((state) => state.searchSlice.status);
-  const { isFetching, isSuccess } = status;
+  const { isFetching, isSuccess, isError, error } = status;
 
   return (
     <main className={Styles.main}>
+      {isError && <p style={{ color: "red" }}>{error}</p>}
       {(total || isSuccess) && <p>{`Found ${total} results`}</p>}
       <BooksGrid />
       {isFetching && <Loader />}
