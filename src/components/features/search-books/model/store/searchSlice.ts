@@ -48,6 +48,11 @@ const searchSlice = createSlice({
       state.foundBooks.push(...action.payload);
     },
 
+    resetBooks(state) {
+      state.foundBooks = initialState.foundBooks;
+      state.foundTotal = initialState.foundTotal;
+    },
+
     enterSearchInput(state, action) {
       state.inputs.search = action.payload;
     },
@@ -84,6 +89,7 @@ export default searchSlice.reducer;
 export const {
   setFoundBooks,
   addMoreBooks,
+  resetBooks,
   enterSearchInput,
   changeCategoryFilter,
   changeSortingByFilter,

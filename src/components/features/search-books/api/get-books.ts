@@ -2,12 +2,14 @@ import { AppDispatch } from "@/store/store";
 import {
   setFoundBooks,
   addMoreBooks,
+  resetBooks,
   getBooksRequest,
   getBooksError,
   getBooksSuccess,
 } from "../model/store/searchSlice";
 
 const getBooks = (url: string) => async (dispatch: AppDispatch) => {
+  dispatch(resetBooks());
   dispatch(getBooksRequest());
   await fetch(url)
     .then((res) => res.json())
