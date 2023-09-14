@@ -1,6 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-
-// eslint-disable-next-line import/no-cycle
 import { paginationStep } from "@/components/features/pagination";
 import { API_KEY } from "../constants/config";
 

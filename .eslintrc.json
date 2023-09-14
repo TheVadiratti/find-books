@@ -21,6 +21,7 @@
       "error"
     ],
     "react/require-default-props": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "import/no-cycle": "off"
   }
 }

@@ -11,7 +11,6 @@ import {
 } from "../model/store/searchSlice";
 import { CATEGORIES, SORTING_BY } from "../lib/constants/select";
 import Styles from "./search-books.module.css";
-// eslint-disable-next-line import/no-cycle
 import { composeUrl } from "../lib/helpers/url";
 import { BASE_URL } from "../lib/constants/config";
 import useInputControl from "../../../shared/hooks/store";
