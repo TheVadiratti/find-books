@@ -38,7 +38,9 @@ const SearchBooks = memo(() => {
         value={search}
         extraClass={Styles.searchInput}
       >
-        <SimpleButton type="submit">Search</SimpleButton>
+        <SimpleButton type="submit" disabled={!inputs.search.length}>
+          Search
+        </SimpleButton>
       </SearchInput>
       <div className={Styles.filters}>
         <div className={Styles.filter}>
