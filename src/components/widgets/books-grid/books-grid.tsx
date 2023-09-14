@@ -10,15 +10,16 @@ const BooksGrid = memo(() => {
 
   return (
     <ul className={Styles.cnt}>
-      {foundBooks.map((item) => (
-        <BookCard
-          image={item.volumeInfo.imageLinks?.smallThumbnail}
-          categories={item.volumeInfo.categories}
-          name={item.volumeInfo.title}
-          authors={item.volumeInfo.authors}
-          key={item.id}
-        />
-      ))}
+      {foundBooks &&
+        foundBooks.map((item) => (
+          <BookCard
+            image={item.volumeInfo.imageLinks?.smallThumbnail}
+            categories={item.volumeInfo.categories}
+            name={item.volumeInfo.title}
+            authors={item.volumeInfo.authors}
+            key={item.id}
+          />
+        ))}
     </ul>
   );
 });

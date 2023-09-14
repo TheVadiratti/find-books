@@ -16,7 +16,7 @@ export default function Home() {
       {(total || isSuccess) && <p>{`Found ${total} results`}</p>}
       <BooksGrid />
       {isFetching && <Loader />}
-      {isSuccess && <PaginationButton />}
+      {Boolean(total) && <PaginationButton />}
     </main>
   );
 }
