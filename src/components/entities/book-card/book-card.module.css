@@ -1,10 +1,21 @@
 .card {
   width: 280px;
   height: 450px;
+  box-sizing: border-box;
   list-style-type: none;
   box-sizing: border-box;
   padding: 20px;
   font-size: var(--s-font-size);
+  border: 1px solid #fff;
+}
+
+.card:hover {
+  border: 1px solid #000;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .imageCnt {

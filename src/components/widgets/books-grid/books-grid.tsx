@@ -17,6 +17,7 @@ const BooksGrid = memo(() => {
             categories={item.volumeInfo.categories}
             name={item.volumeInfo.title}
             authors={item.volumeInfo.authors}
+            id={item.id}
             key={item.id}
           />
         ))}

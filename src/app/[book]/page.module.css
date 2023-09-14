@@ -1,0 +1,48 @@
+.main {
+  padding: 50px 10vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.imageCnt {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.category {
+  font-weight: bold;
+  opacity: .8;
+}
+
+.name {
+  font-size: var(--l-font-size);
+  font-weight: bold;
+}
+
+.authors {
+  opacity: .8;
+  text-decoration: underline;
+}
+
+.description {
+  margin: 0;
+}
+
+.descriptionCnt {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 30px 5vw;
+  }
+}

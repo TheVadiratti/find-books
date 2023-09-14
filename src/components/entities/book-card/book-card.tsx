@@ -1,8 +1,10 @@
 import { memo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Styles from "./book-card.module.css";
 
 interface Props {
+  id: string;
   image?: string;
   categories?: string[];
   name?: string;
@@ -10,14 +12,16 @@ interface Props {
 }
 
 const BookCard = memo(
-  ({ image = "", categories = [], name = "", authors = [] }: Props) => (
+  ({ id, image = "", categories = [], name = "", authors = [] }: Props) => (
     <li className={Styles.card}>
-      <div className={Styles.imageCnt}>
-        <Image src={image} alt="book preview" fill objectFit="contain" />
-      </div>
-      <p className={Styles.category}>{categories[0] || ""}</p>
-      <p className={Styles.name}>{name}</p>
-      <p className={Styles.author}>{authors.join(", ") || ""}</p>
+      <Link className={Styles.link} href={`/${id}`}>
+        <div className={Styles.imageCnt}>
+          <Image src={image} alt="book preview" fill objectFit="contain" />
+        </div>
+        <p className={Styles.category}>{categories[0] || ""}</p>
+        <p className={Styles.name}>{name}</p>
+        <p className={Styles.author}>{authors.join(", ") || ""}</p>
+      </Link>
     </li>
   ),
 );
