@@ -1,0 +1,41 @@
+.card {
+  width: 280px;
+  height: 450px;
+  box-sizing: border-box;
+  list-style-type: none;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: var(--s-font-size);
+  border: 1px solid #fff;
+}
+
+.card:hover {
+  border: 1px solid #000;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.imageCnt {
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+
+.category {
+  height: 5%;
+  text-decoration: underline;
+  opacity: .8;
+}
+
+.name {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.author {
+  height: 5%;
+  opacity: .8;
+}

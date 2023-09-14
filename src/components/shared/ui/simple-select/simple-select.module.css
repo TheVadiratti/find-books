@@ -1,0 +1,5 @@
+.select {
+  height: 40px;
+  flex-grow: 1;
+  font-size: var(--m-font-size);
+}

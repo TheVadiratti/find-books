@@ -1,0 +1,9 @@
+.cnt {
+  height: 40px;
+  display: flex;
+}
+
+.input {
+  flex-grow: 1;
+  font-size: var(--m-font-size);
+}

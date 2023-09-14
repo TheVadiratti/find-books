@@ -1,0 +1,8 @@
+.button {
+  font-size: var(--m-font-size);
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: auto;
+}

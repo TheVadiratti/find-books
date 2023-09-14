@@ -1,0 +1,25 @@
+.cnt {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .cnt {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .cnt {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cnt {
+    grid-template-columns: auto;
+  }
+}

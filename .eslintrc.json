@@ -20,6 +20,9 @@
     "prettier/prettier": [
       "error"
     ],
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
+    "import/no-cycle": "off",
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }
