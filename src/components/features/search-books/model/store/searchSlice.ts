@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
-import { Book } from "@/store/types/types";
+import { Book } from "@/components/entities/book-card/model/types";
 import { CATEGORIES, SORTING_BY } from "../../lib/constants/select";
 
 interface InitialState {

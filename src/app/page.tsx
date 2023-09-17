@@ -1,7 +1,7 @@
 "use client";
 
 import BooksGrid from "@/components/widgets/books-grid/books-grid";
-import { useAppSelector } from "@/store/types/hooks";
+import { useAppSelector } from "@/store/types";
 import { PaginationButton } from "@/components/features/pagination";
 import Loader from "@/components/shared/ui/loader/loader";
 import Styles from "./page.module.css";

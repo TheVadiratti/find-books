@@ -1,5 +1,5 @@
 import { memo, FormEventHandler } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/types/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/types";
 import SearchInput from "@/components/shared/ui/search-input/search-input";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import SimpleSelect from "@/components/shared/ui/simple-select/simple-select";
