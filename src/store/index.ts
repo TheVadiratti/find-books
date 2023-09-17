@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import searchSlice from "@/components/features/search-books/model/store/searchSlice";
-import paginationSlice from "@/components/features/pagination/model/store/paginationSlice";
+import { booksSlice } from "@/components/entities";
+import { searchSlice, paginationSlice } from "@/components/features";
 
-const rootReducer = combineReducers({ searchSlice, paginationSlice });
+const rootReducer = combineReducers({
+  booksSlice,
+  searchSlice,
+  paginationSlice,
+});
 
 const store = configureStore({
   reducer: rootReducer,

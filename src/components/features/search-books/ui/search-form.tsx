@@ -1,22 +1,24 @@
 import { memo, FormEventHandler } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/types";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import SearchInput from "@/components/shared/ui/search-input/search-input";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import SimpleSelect from "@/components/shared/ui/simple-select/simple-select";
+import { resetBooks } from "@/components/entities";
 import { getBooks } from "../api/get-books";
 import {
   enterSearchInput,
   changeCategoryFilter,
   changeSortingByFilter,
-} from "../model/store/searchSlice";
-import { CATEGORIES, SORTING_BY } from "../lib/constants/select";
-import Styles from "./search-books.module.css";
+} from "../model/slice";
+import { CATEGORIES, SORTING_BY } from "../constants/select";
 import { composeUrl } from "../lib/helpers/url";
-import { BASE_URL } from "../lib/constants/config";
-import { useInputControl } from "../../../shared/hooks/store";
+import { BASE_URL } from "../config/url";
+import { useInputControl } from "../../../shared/lib/hooks/store";
+import Styles from "./search-form.module.css";
 
-const SearchBooks = memo(() => {
+const SearchForm = memo(() => {
   const dispatch = useAppDispatch();
+  const foundTotal = useAppSelector((state) => state.booksSlice.foundTotal);
   const inputs = useAppSelector((state) => state.searchSlice.inputs);
   const searchInputHandler = useInputControl(enterSearchInput);
   const categorySelectHandler = useInputControl(changeCategoryFilter);
@@ -26,6 +28,9 @@ const SearchBooks = memo(() => {
   const submitForm: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
+    if (foundTotal) {
+      dispatch(resetBooks());
+    }
     const url = composeUrl(BASE_URL, inputs);
     dispatch(getBooks(url));
   };
@@ -64,4 +69,4 @@ const SearchBooks = memo(() => {
   );
 });
 
-export default SearchBooks;
+export default SearchForm;

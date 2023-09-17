@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background-image: url(../../../../public/книга.jpg);
+  background-image: url(../../../../../public/книга.jpg);
   background-size: cover;
   padding: 50px 0;
   display: flex;

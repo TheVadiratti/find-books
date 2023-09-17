@@ -1,6 +1,6 @@
 "use client";
 
-import { useFindBook } from "@/components/shared/hooks/store";
+import { useFindBook } from "@/components/shared/lib/hooks/store";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Styles from "./page.module.css";

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
-import { paginationStep } from "../../lib/config";
+import { paginationStep } from "../config/pagination";
 
 interface InitialState {
   startIndex: number;

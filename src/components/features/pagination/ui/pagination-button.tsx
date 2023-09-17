@@ -1,10 +1,10 @@
 import { memo } from "react";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
-import { useAppDispatch, useAppSelector } from "@/store/types";
-import { increment } from "../model/store/paginationSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { increment } from "../model/slice";
 import { composeUrl } from "../../search-books/lib/helpers/url";
-import { BASE_URL } from "../../search-books/lib/constants/config";
-import { getMoreBooks } from "../../search-books";
+import { BASE_URL } from "../../search-books/config/url";
+import { getMoreBooks } from "../api/add-books";
 
 const PaginationButton = memo(() => {
   const dispatch = useAppDispatch();

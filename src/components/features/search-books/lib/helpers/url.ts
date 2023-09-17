@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import { paginationStep } from "@/components/features/pagination";
-import { API_KEY } from "../constants/config";
+import { paginationStep } from "@/components/features/pagination/config/pagination";
+import { API_KEY } from "../../config/url";
 
 export const composeUrl = (
   baseUrl: string,

@@ -1,13 +1,13 @@
 "use client";
 
-import BooksGrid from "@/components/widgets/books-grid/books-grid";
-import { useAppSelector } from "@/store/types";
-import { PaginationButton } from "@/components/features/pagination";
+import BooksGrid from "@/components/widgets/books-grid/ui/books-grid";
+import { useAppSelector } from "@/store/hooks";
+import { PaginationButton } from "@/components/features";
 import Loader from "@/components/shared/ui/loader/loader";
 import Styles from "./page.module.css";
 
 export default function Home() {
-  const total = useAppSelector((state) => state.searchSlice.foundTotal);
+  const total = useAppSelector((state) => state.booksSlice.foundTotal);
   const status = useAppSelector((state) => state.searchSlice.status);
   const { isFetching, isSuccess, isError, error } = status;
 

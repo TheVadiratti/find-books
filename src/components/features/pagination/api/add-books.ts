@@ -1,19 +1,18 @@
 /* eslint-disable import/prefer-default-export */
 import { AppDispatch } from "@/store";
-import { setFoundBooks } from "@/components/entities";
+import { addMoreBooks } from "@/components/entities";
 import {
   getBooksRequest,
-  getBooksError,
   getBooksSuccess,
-} from "../model/slice";
+  getBooksError,
+} from "../../search-books/model/slice";
 
-const getBooks = (url: string) => async (dispatch: AppDispatch) => {
+const getMoreBooks = (url: string) => async (dispatch: AppDispatch) => {
   dispatch(getBooksRequest());
   await fetch(url)
     .then((res) => res.json())
     .then((res) => {
-      const { totalItems, items } = res;
-      dispatch(setFoundBooks({ total: totalItems, items }));
+      dispatch(addMoreBooks(res.items));
       dispatch(getBooksSuccess());
     })
     .catch((err) => {
@@ -21,4 +20,4 @@ const getBooks = (url: string) => async (dispatch: AppDispatch) => {
     });
 };
 
-export { getBooks };
+export { getMoreBooks };

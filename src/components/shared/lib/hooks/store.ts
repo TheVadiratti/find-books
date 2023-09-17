@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/store/types";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { ChangeEventHandler } from "react";
 
 const useInputControl = (action: any) => {
