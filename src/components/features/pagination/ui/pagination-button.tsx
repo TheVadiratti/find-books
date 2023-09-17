@@ -1,7 +1,7 @@
 import { memo } from "react";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { increment } from "../model/slice";
+import { incrementPagination } from "../model/slice";
 import { composeUrl } from "../../search-books/lib/helpers/url";
 import { BASE_URL } from "../../search-books/config/url";
 import { getMoreBooks } from "../api/add-books";
@@ -14,7 +14,7 @@ const PaginationButton = memo(() => {
   );
 
   const paginationHandler = () => {
-    dispatch(increment());
+    dispatch(incrementPagination());
 
     const params = { ...inputs, startIndex };
     const url = composeUrl(BASE_URL, params);
