@@ -14,14 +14,14 @@ const paginationSlice = createSlice({
   name: "pagination",
   initialState,
   reducers: {
-    increment(state) {
+    incrementPagination(state) {
       state.startIndex += paginationStep;
     },
-    reset(state) {
+    resetPagination(state) {
       state.startIndex = 0;
     },
   },
 });
 
 export default paginationSlice.reducer;
-export const { increment, reset } = paginationSlice.actions;
+export const { incrementPagination, resetPagination } = paginationSlice.actions;

@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import SearchInput from "@/components/shared/ui/search-input/search-input";
 import SimpleButton from "@/components/shared/ui/simple-button/simple-button";
 import SimpleSelect from "@/components/shared/ui/simple-select/simple-select";
-import { resetBooks } from "@/components/entities";
 import { getBooks } from "../api/get-books";
 import {
   enterSearchInput,
@@ -18,7 +17,6 @@ import Styles from "./search-form.module.css";
 
 const SearchForm = memo(() => {
   const dispatch = useAppDispatch();
-  const foundTotal = useAppSelector((state) => state.booksSlice.foundTotal);
   const inputs = useAppSelector((state) => state.searchSlice.inputs);
   const searchInputHandler = useInputControl(enterSearchInput);
   const categorySelectHandler = useInputControl(changeCategoryFilter);
@@ -28,9 +26,6 @@ const SearchForm = memo(() => {
   const submitForm: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    if (foundTotal) {
-      dispatch(resetBooks());
-    }
     const url = composeUrl(BASE_URL, inputs);
     dispatch(getBooks(url));
   };

@@ -1,11 +1,12 @@
 /* eslint-disable import/prefer-default-export */
 import { AppDispatch } from "@/store";
-import { setFoundBooks } from "@/components/entities";
+import { resetBooks, setFoundBooks } from "@/components/entities";
 import {
   getBooksRequest,
   getBooksError,
   getBooksSuccess,
 } from "../model/slice";
+import { resetPagination } from "../../pagination/model/slice";
 
 const getBooks = (url: string) => async (dispatch: AppDispatch) => {
   dispatch(getBooksRequest());
@@ -13,6 +14,8 @@ const getBooks = (url: string) => async (dispatch: AppDispatch) => {
     .then((res) => res.json())
     .then((res) => {
       const { totalItems, items } = res;
+      dispatch(resetBooks());
+      dispatch(resetPagination());
       dispatch(setFoundBooks({ total: totalItems, items }));
       dispatch(getBooksSuccess());
     })
