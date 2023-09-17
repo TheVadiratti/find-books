@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import { paginationStep } from "@/components/features/pagination/config/pagination";
 import { API_KEY } from "../../config/url";
 
 export const composeUrl = (
@@ -9,9 +8,10 @@ export const composeUrl = (
     category: string;
     sortingBy: string;
     startIndex?: number;
+    step?: number;
   },
 ) => {
-  const { search, category, sortingBy, startIndex } = params;
+  const { search, category, sortingBy, startIndex = 0, step = 10 } = params;
   let url = baseUrl;
 
   if (search) {
@@ -26,9 +26,7 @@ export const composeUrl = (
     url += `&orderBy=${sortingBy.toLowerCase()}`;
   }
 
-  if (startIndex) {
-    url += `&startIndex=${String(startIndex)}&maxResults=${paginationStep}`;
-  }
+  url += `&startIndex=${String(startIndex)}&maxResults=${String(step)}`;
 
   url += `&key=${API_KEY}`;
 

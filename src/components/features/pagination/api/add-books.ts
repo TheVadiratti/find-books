@@ -6,8 +6,10 @@ import {
   getBooksSuccess,
   getBooksError,
 } from "../../search-books/model/slice";
+import { incrementPagination } from "../model/slice";
 
 const getMoreBooks = (url: string) => async (dispatch: AppDispatch) => {
+  dispatch(incrementPagination());
   dispatch(getBooksRequest());
   await fetch(url)
     .then((res) => res.json())

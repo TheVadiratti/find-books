@@ -4,10 +4,12 @@ import { paginationStep } from "../config/pagination";
 
 interface InitialState {
   startIndex: number;
+  step: number;
 }
 
 const initialState: InitialState = {
-  startIndex: 0,
+  startIndex: 10,
+  step: paginationStep,
 };
 
 const paginationSlice = createSlice({
@@ -15,10 +17,12 @@ const paginationSlice = createSlice({
   initialState,
   reducers: {
     incrementPagination(state) {
-      state.startIndex += paginationStep;
+      state.startIndex += state.step;
+      state.step = paginationStep;
     },
     resetPagination(state) {
-      state.startIndex = 0;
+      state.startIndex = initialState.startIndex;
+      state.step = initialState.step;
     },
   },
 });
