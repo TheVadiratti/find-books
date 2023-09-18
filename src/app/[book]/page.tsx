@@ -22,9 +22,10 @@ export default function Book({ params }: { params: { book: string } }) {
       {book?.volumeInfo.imageLinks?.thumbnail && (
         <div className={Styles.imageCnt}>
           <Image
+            className={Styles.image}
             src={book?.volumeInfo.imageLinks?.thumbnail}
             fill
-            objectFit="contain"
+            sizes="100%"
             alt="front-side book"
           />
         </div>

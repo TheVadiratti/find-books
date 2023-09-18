@@ -24,6 +24,10 @@
   position: relative;
 }
 
+.image {
+  object-fit: contain;
+}
+
 .category {
   height: 5%;
   text-decoration: underline;

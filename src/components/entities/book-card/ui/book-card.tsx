@@ -16,7 +16,13 @@ const BookCard = memo(
     <li className={Styles.card}>
       <Link className={Styles.link} href={`/${id}`}>
         <div className={Styles.imageCnt}>
-          <Image src={image} alt="book preview" fill objectFit="contain" />
+          <Image
+            className={Styles.image}
+            src={image}
+            alt="book preview"
+            fill
+            sizes="100%"
+          />
         </div>
         <p className={Styles.category}>{categories[0] || ""}</p>
         <p className={Styles.name}>{name}</p>

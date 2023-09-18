@@ -13,6 +13,10 @@
   position: relative;
 }
 
+.image {
+  object-fit: contain;
+}
+
 .category {
   font-weight: bold;
   opacity: .8;
