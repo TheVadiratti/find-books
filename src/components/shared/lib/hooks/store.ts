@@ -14,7 +14,7 @@ const useInputControl = (action: any) => {
 };
 
 const useFindBook = (id: string) => {
-  const foundBooks = useAppSelector((state) => state.searchSlice.foundBooks);
+  const foundBooks = useAppSelector((state) => state.booksSlice.foundBooks);
   return foundBooks.find((item) => item.id === id);
 };
 
